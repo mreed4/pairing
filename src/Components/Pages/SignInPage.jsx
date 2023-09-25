@@ -1,6 +1,8 @@
+import "../../assets/css/SignInPage.css";
+
 export default function SignInPage() {
   return (
-    <div>
+    <div id="sign-in-page" className="app-page fade-in">
       <h2>Sign In</h2>
       <p>Sign in to your account</p>
       <form>

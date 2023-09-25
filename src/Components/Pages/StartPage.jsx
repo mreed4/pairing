@@ -1,38 +1,48 @@
 import { Link, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 import "../../assets/css/StartPage.css";
 
-function cycleThroughWords() {
-  const words = ["build", "design", "develop", "create", "grow"];
+// function cycleThroughWords() {
+//   const words = ["build", "design", "develop", "create", "grow"];
 
-  let i = 0;
+//   let i = 0;
 
-  setInterval(() => {
-    const word = document.getElementById("word");
-    word.innerText = words[i];
-    i = (i + 1) % words.length;
-  }, 1000);
-}
+//   setInterval(() => {
+//     const word = document.getElementById("word");
+//     word.innerText = words[i];
+//     i = (i + 1) % words.length;
+//   }, 1000);
+// }
 
 export default function StartPage() {
   const location = useLocation();
+
+  const wordRef = useRef();
+
+  function cycleThroughWords() {
+    const words = ["build", "design", "develop", "create", "grow"];
+
+    let i = 0;
+
+    setInterval(() => {
+      wordRef.current.innerText = words[i];
+      i = (i + 1) % words.length;
+    }, 1000);
+  }
+
   useEffect(() => {
     if (location.pathname === "/") {
-      // cycleThroughWords();
+      cycleThroughWords();
     }
   }, []);
 
   return (
-    <div id="start-page">
+    <div id="start-page" className="app-page fade-in">
       <section id="intro">
         <div>
           <p>
-            We connect you to others to help you{" "}
-            <span id="word" className="word">
-              build
-            </span>
-            .
+            We connect you to others to help you <span id="word" className="word" ref={wordRef}></span>.
           </p>
         </div>
       </section>
@@ -40,14 +50,10 @@ export default function StartPage() {
         <div>
           <h2>About</h2>
           <p>
-            Pairings is a primarily a platform that matches&nbsp;<span className="green keyword">new designers</span>&nbsp;with&nbsp;
-            <span className="blue keyword">new developers</span>. If you need to pad your portfolio, or just want to work on a project with
-            someone else, then this is the place for you.
+            Pairings is firstly a platform that matches new designers with new developers. If you need to pad your portfolio, or just want
+            to work on a project with someone else, then this is the place for you.
           </p>
-          <p>
-            It can also be used to pair&nbsp;<span className="blue keyword">new developers</span>&nbsp;with&nbsp;
-            <span className="green keyword">more experienced developers</span>.
-          </p>
+          <p>It can also be used to pair new developers with more experienced developers.</p>
           <p>We believe that the best way to learn is to work with others, and we want to help you find the right people to work with.</p>
         </div>
       </section>

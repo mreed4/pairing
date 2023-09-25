@@ -24,10 +24,15 @@ function Header() {
               <li>
                 <a href="#features">Features</a>
               </li>
+              <li>
+                <a href="#pricing">Pricing</a>
+              </li>
             </>
           )}
           <li>
-            <Link to="/sign-in">Sign In</Link>
+            <Link to="/sign-in" className="sign-in-link">
+              Sign In
+            </Link>
           </li>
         </ul>
       </nav>

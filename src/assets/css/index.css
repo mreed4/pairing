@@ -9,7 +9,7 @@
   --blue: #219ebc;
   --gold: #ffb703;
   --green: #3ec300;
-  --black: hsl(50, 19%, 12%);
+  --black: #121420;
 
   color-scheme: light dark;
   color: var(--black);
@@ -24,6 +24,11 @@
   -webkit-text-size-adjust: 100%;
 
   transition: color 125ms ease-out, background 125ms ease-out;
+}
+
+::selection {
+  color: var(--white);
+  background: var(--black);
 }
 
 * {
@@ -50,6 +55,11 @@ body {
   :root {
     color: var(--white);
     background: var(--black);
+  }
+
+  ::selection {
+    color: var(--black);
+    background: var(--white);
   }
 }
 

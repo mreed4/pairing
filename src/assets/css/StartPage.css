@@ -12,7 +12,7 @@
   height: calc(100dvh - 112px) !important;
   /* border-radius: 1rem; */
   /* margin: 0 0.5rem; */
-  background-image: url("./img/pexels-fauxels-3184291.jpg");
+  background-image: url("/public/img/pexels-fauxels-3184291.jpg");
   background-size: cover;
   overflow: hidden;
 
@@ -21,7 +21,7 @@
 
 #intro > div {
   background-color: hsla(0, 0%, 0%, 0.1);
-  backdrop-filter: blur(10px) saturate(75%);
+  backdrop-filter: blur(15px) saturate(75%);
   height: 100%;
   /* z-index: 4; */
   width: 100%;
@@ -29,6 +29,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: background-color 125ms ease-out, backdrop-filter 125ms ease-out;
 }
 
 #intro p {
@@ -50,9 +51,11 @@
 
 #about {
   padding: 4rem 0 !important;
-  margin-bottom: 8rem;
+  margin-bottom: 4rem;
   align-items: flex-start !important;
   justify-content: flex-start !important;
+
+  border-bottom: 2px solid var(--white-dark);
 }
 
 #about > div {
@@ -87,6 +90,7 @@
   border-radius: 1rem;
   margin: 0 0.5rem;
   border: 2px solid var(--white-dark); */
+  border-bottom: 2px solid var(--white-dark);
 }
 
 #features > div {
@@ -145,29 +149,24 @@
   width: 100%;
   max-width: 1024px;
   margin: 0 auto;
-  /* border: 1px solid red; */
 }
 
 .pricing-plans {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   margin: 2rem 0;
-}
-
-.pricing-plan-labels {
-  /* width: 300px; */
-}
-
-.pricing-plans {
-  flex: 1;
 }
 
 .pricing-plan-labels li,
 .pricing-plans li {
   padding: 0.5rem 0;
   font-size: 1.15rem;
+}
+
+.pricing-plan-labels {
+  /* width: 300px; */
 }
 
 .pricing-plan-labels * {
@@ -179,11 +178,14 @@
 }
 
 .pricing-plan {
-  /* width: calc(100% / 3 - 6rem); */
-  margin: 0 2rem;
-  /* border: 1px solid red; */
-  border-left: 2px solid var(--white-dark);
-  padding-left: 2rem;
+  margin: 0 4rem;
+  flex: 1;
+
+  text-align: center;
+}
+
+.pricing-plan li {
+  text-align: center;
 }
 
 .pricing-plans ul {
@@ -194,7 +196,20 @@
 
 @media (prefers-color-scheme: dark) {
   #intro > div {
-    background-color: hsla(0, 0%, 0%, 0.4);
-    backdrop-filter: blur(10px) saturate(35%);
+    background-color: hsla(231.4, 28%, 9.8%, 0.8);
+    backdrop-filter: blur(10px) brightness(75%);
+  }
+
+  #about,
+  #features {
+    border-bottom: 2px solid hsl(231.4, 28%, 13.8%);
+  }
+
+  #intro p .word {
+    color: var(--gold);
+  }
+
+  #about p:first-of-type {
+    color: var(--gold);
   }
 }

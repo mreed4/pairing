@@ -33,12 +33,22 @@ header ul li {
   font-size: 1.25rem;
 }
 
+header .sign-in-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background-color: var(--blue);
+  margin-left: 2rem;
+  font-size: 1.25rem;
+  color: var(--white);
+}
+
 .fade-in {
-  animation: fadeIn ease 1s;
-  -webkit-animation: fadeIn ease 1s;
-  -moz-animation: fadeIn ease 1s;
-  -o-animation: fadeIn ease 1s;
-  -ms-animation: fadeIn ease 1s;
+  animation: fadeIn ease 125ms;
+  -webkit-animation: fadeIn ease 125ms;
+  -moz-animation: fadeIn ease 125ms;
+  -o-animation: fadeIn ease 125ms;
+  -ms-animation: fadeIn ease 125ms;
 }
 
 .pink {
