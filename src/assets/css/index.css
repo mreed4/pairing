@@ -3,19 +3,23 @@
   line-height: 1.5;
   font-weight: 400;
 
-  --white: hsl(51.8, 50%, 91.4%);
-  --white-dark: hsl(51.8, 50%, 81.4%);
+  --white: hsl(51.8, 50%, 95.4%);
+  --white-dark: hsl(51.8, 50%, 90%);
+  --tan: #caa781;
+  --tan-dark: #b59b6a;
   --pink: #fb6f92;
   --blue: #219ebc;
   --gold: #ffb703;
   --green: #3ec300;
   --black: #121420;
+  --olive: hsl(143.2, 20.2%, 42.7%);
+  --olive-light: hsl(143.2, 20.2%, 47.7%);
+  --olive-dark: hsl(135, 17%, 38.9%);
+  --olive-darker: hsl(135, 17%, 33.9%);
 
   color-scheme: light dark;
-  color: var(--black);
-  background: var(--white);
-  /* background-size: cover; */
-  background-attachment: fixed;
+  color: var(--white);
+  background: var(--olive);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -26,9 +30,9 @@
   transition: color 125ms ease-out, background 125ms ease-out;
 }
 
-::selection {
-  color: var(--white);
-  background: var(--black);
+.highlight {
+  color: var(--white) !important;
+  background: var(--olive-darker);
 }
 
 * {
@@ -47,7 +51,6 @@ html {
 }
 
 body {
-  /* padding: 2rem; */
   min-height: 100vh;
 }
 
@@ -57,8 +60,8 @@ body {
     background: var(--black);
   }
 
-  ::selection {
-    color: var(--black);
+  .highlight {
+    color: var(--black) !important;
     background: var(--white);
   }
 }

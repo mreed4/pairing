@@ -1,29 +1,22 @@
 #start-page section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* height: 100dvh; */
-  /* padding: 0 2rem; */
-  /* border: 1px solid red; */
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 #intro {
-  height: calc(100dvh - 112px) !important;
-  /* border-radius: 1rem; */
-  /* margin: 0 0.5rem; */
-  background-image: url("/public/img/pexels-fauxels-3184291.jpg");
+  background-image: url("/img/pexels-fauxels-3184291.jpg");
   background-size: cover;
-  overflow: hidden;
-
-  /* border: 2px solid var(--white-dark); */
+  justify-content: center;
+  align-items: center;
 }
 
 #intro > div {
-  background-color: hsla(0, 0%, 0%, 0.1);
-  backdrop-filter: blur(15px) saturate(75%);
+  background-color: hsla(143.2, 20.2%, 42.7%, 0.7);
+  backdrop-filter: blur(5px) saturate(65%);
   height: 100%;
-  /* z-index: 4; */
+  padding: 14rem 0;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -34,7 +27,6 @@
 
 #intro p {
   font-size: 5rem;
-  /* margin-top: -4em; */
   max-width: 1024px;
   color: var(--white);
 }
@@ -42,20 +34,22 @@
 #intro p .word {
   display: inline-block;
   position: relative;
-  /* font-size: 5rem; */
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--blue);
+  color: var(--pink);
+}
+
+#about,
+#features,
+#pricing {
+  padding: 6rem 0;
+  border-bottom: 2px solid var(--olive-light);
+  transition: border-bottom 125ms ease-out;
 }
 
 #about {
-  padding: 4rem 0 !important;
-  margin-bottom: 4rem;
-  align-items: flex-start !important;
-  justify-content: flex-start !important;
-
-  border-bottom: 2px solid var(--white-dark);
+  margin: 1rem 0 0;
 }
 
 #about > div {
@@ -70,79 +64,54 @@
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
   line-height: 1.5;
-  /* color: var(--blue); */
 }
 
 #about p:first-of-type {
   font-size: 2.15rem;
-  color: var(--blue);
-}
-
-#about p * {
-  color: inherit !important; /* !important to override the color-scheme */
-}
-
-#features {
-  padding: 4rem 0 !important;
-  align-items: flex-start !important;
-  /* background-color: whitesmoke;
-  color: black;
-  border-radius: 1rem;
-  margin: 0 0.5rem;
-  border: 2px solid var(--white-dark); */
-  border-bottom: 2px solid var(--white-dark);
+  color: var(--pink);
 }
 
 #features > div {
   max-width: 1024px;
   margin: 0 auto;
-  /* border: 1px solid red; */
 }
 
-.features-feature-list {
+.features-list {
   margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  /* border: 1px solid red; */
 }
 
-.features-feature {
+.feature {
   width: calc(100% / 2 - 2rem);
   margin-bottom: 2rem;
 }
 
-.features-feature p,
-.features-feature h3 {
+.feature p,
+.feature h3 {
   font-size: 1.5rem;
 }
 
-.features-feature h3 {
+.feature h3 {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
 
-.features-feature h3 span {
+.feature h3 span {
   margin-right: 0.5rem;
 }
 
-.features-feature p {
+.feature p {
   margin-top: 1rem;
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
   line-height: 1.5;
   font-size: 1.25rem;
-}
-
-#pricing {
-  padding: 4rem 0 !important;
-  margin-bottom: 8rem;
-  align-items: flex-start !important;
-  justify-content: flex-start !important;
 }
 
 #pricing > div {
@@ -163,10 +132,6 @@
 .pricing-plans li {
   padding: 0.5rem 0;
   font-size: 1.15rem;
-}
-
-.pricing-plan-labels {
-  /* width: 300px; */
 }
 
 .pricing-plan-labels * {
@@ -201,15 +166,8 @@
   }
 
   #about,
-  #features {
+  #features,
+  #pricing {
     border-bottom: 2px solid hsl(231.4, 28%, 13.8%);
-  }
-
-  #intro p .word {
-    color: var(--gold);
-  }
-
-  #about p:first-of-type {
-    color: var(--gold);
   }
 }
