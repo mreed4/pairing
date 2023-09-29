@@ -25,6 +25,16 @@
   transition: background-color 125ms ease-out, backdrop-filter 125ms ease-out;
 }
 
+.light-theme #intro > div {
+  background-color: hsla(143.2, 20.2%, 42.7%, 0.7);
+  backdrop-filter: blur(5px) saturate(65%);
+}
+
+.dark-theme #intro > div {
+  background-color: hsla(231.4, 28%, 9.8%, 0.8);
+  backdrop-filter: blur(10px) brightness(75%);
+}
+
 #intro p {
   font-size: 5rem;
   max-width: 1024px;
@@ -46,6 +56,18 @@
   padding: 6rem 0;
   border-bottom: 2px solid var(--olive-light);
   transition: border-bottom 125ms ease-out;
+}
+
+.light-theme #about,
+.light-theme #features,
+.light-theme #pricing {
+  border-bottom: 2px solid var(--olive-light);
+}
+
+.dark-theme #about,
+.dark-theme #features,
+.dark-theme #pricing {
+  border-bottom: 2px solid hsl(231.4, 28%, 13.8%);
 }
 
 #about {

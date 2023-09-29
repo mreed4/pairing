@@ -1,3 +1,61 @@
+:root {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --white: hsl(51.8, 50%, 95.4%);
+  --white-dark: hsl(51.8, 50%, 90%);
+  --tan: #caa781;
+  --tan-dark: #b59b6a;
+  --pink: #fb6f92;
+  --blue: #219ebc;
+  --gold: #ffb703;
+  --green: #3ec300;
+  --black: #121420;
+  --olive: hsl(143.2, 20.2%, 42.7%);
+  --olive-light: hsl(143.2, 20.2%, 47.7%);
+  --olive-dark: hsl(135, 17%, 38.9%);
+  --olive-darker: hsl(135, 17%, 33.9%);
+
+  color-scheme: light dark;
+  color: var(--white);
+  background: var(--olive);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  transition: color 125ms ease-out, background 125ms ease-out;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.light-theme {
+  color: var(--white);
+  background: var(--olive);
+}
+
+.dark-theme {
+  background: var(--black);
+}
+
+.light-theme .highlight {
+  color: var(--white);
+  background: var(--olive-darker);
+}
+
+.dark-theme .highlight {
+  color: var(--black);
+  background: var(--white);
+}
+
 #root {
   margin: 0 auto;
 }
@@ -25,13 +83,82 @@ header ul li {
   font-size: 1.25rem;
 }
 
+header > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 header .sign-in-link {
+  margin-left: 2rem;
+}
+
+.button {
   display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
-  background-color: var(--blue);
-  margin-left: 2rem;
   font-size: 1.25rem;
+}
+
+.button.pink {
+  background-color: var(--pink);
+  color: var(--white);
+}
+
+header .theme-toggle {
+  margin-left: 2rem;
+  cursor: pointer;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+
+input {
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background 125ms ease-out, color 125ms ease-out;
+}
+
+input:focus {
+  border: 1px solid var(--pink);
+}
+
+.light-theme input::placeholder {
+  color: var(--olive-darker);
+}
+
+.light-theme input:focus::placeholder {
+  color: var(--olive-dark);
+}
+
+.light-theme input[type="email"],
+.light-theme input[type="password"],
+.light-theme input[type="text"] {
+  background: var(--olive-dark);
+  color: var(--black);
+}
+
+.light-theme input[type="email"]:focus,
+.light-theme input[type="password"]:focus,
+.light-theme input[type="text"]:focus {
+  background: var(--olive-light);
+  color: var(--white);
+}
+
+.dark-theme input[type="email"],
+.dark-theme input[type="password"],
+.dark-theme input[type="text"] {
+  background: hsla(0, 0%, 100%, 0.1);
+  color: var(--black);
+}
+
+.dark-theme input[type="email"]:focus,
+.dark-theme input[type="password"]:focus,
+.dark-theme input[type="text"]:focus {
+  background: hsla(0, 0%, 100%, 0.2);
   color: var(--white);
 }
 

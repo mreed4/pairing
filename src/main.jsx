@@ -7,9 +7,9 @@ import "./assets/css/index.css";
 import App from "./Components/App";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <AppProvider>
-    {/* <React.StrictMode> */}
-    <App />
-    {/* </React.StrictMode> */}
-  </AppProvider>
+  <React.StrictMode>
+    <AppProvider>
+      <App />
+    </AppProvider>
+  </React.StrictMode>
 );

@@ -4,3 +4,11 @@
   justify-content: center;
   align-items: center;
 }
+
+#sign-in-page form {
+  width: 400px;
+}
+
+#sign-in-page input {
+  margin-left: 1rem;
+}
