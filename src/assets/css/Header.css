@@ -28,6 +28,10 @@ header > div {
   align-items: center;
 }
 
+.start-page-nav ul li:first-child {
+  margin-left: 0;
+}
+
 header .sign-in-link {
   margin-left: 2rem;
 }

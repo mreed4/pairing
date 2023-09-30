@@ -5,19 +5,16 @@
   align-items: flex-start;
 }
 
-#intro {
+#hero {
   background-image: url("/img/pexels-fauxels-3184291.jpg");
   background-size: cover;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  /* border-radius: 0 0 2rem 2rem; */
   overflow: hidden;
 }
 
-#intro > div {
-  background-color: hsla(143.2, 20.2%, 42.7%, 0.7);
-  backdrop-filter: blur(5px) saturate(65%);
+#hero > div {
   height: 100%;
   padding: 0;
   width: 100%;
@@ -25,20 +22,23 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: space-between;
-  transition: background-color 125ms ease-out, backdrop-filter 125ms ease-out;
 }
 
-.light-theme #intro > div {
-  background-color: hsla(143.2, 20.2%, 42.7%, 0.7);
+.light-theme #hero > div {
+  background: linear-gradient(hsla(143.2, 20.2%, 42.7%, 0.7) 10%, var(--olive) 90%);
   backdrop-filter: blur(10px) saturate(65%);
+
+  transition: background 125ms ease-out, backdrop-filter 125ms ease-out;
 }
 
-.dark-theme #intro > div {
-  background-color: hsla(231.4, 28%, 9.8%, 0.8);
+.dark-theme #hero > div {
+  background: linear-gradient(hsla(231.4, 28%, 9.8%, 0.7) 10%, var(--black) 90%);
   backdrop-filter: blur(10px) brightness(75%);
+
+  transition: background 125ms ease-out, backdrop-filter 125ms ease-out;
 }
 
-#intro > div > div {
+#hero > div > div {
   height: 100%;
   width: 100%;
   display: flex;
@@ -47,14 +47,14 @@
   align-items: center;
 }
 
-#intro p {
+#hero p {
   margin-top: -2em;
   font-size: 5rem;
   max-width: 1024px;
   color: var(--white);
 }
 
-#intro p .word {
+#hero p .word {
   display: inline-block;
   position: relative;
   font-family: "Libre Baskerville", serif;
@@ -71,12 +71,14 @@
   transition: border-bottom 125ms ease-out;
 }
 
+.light-theme #hero,
 .light-theme #about,
 .light-theme #features,
 .light-theme #pricing {
   border-bottom: 2px solid var(--olive-light);
 }
 
+.dark-theme #hero,
 .dark-theme #about,
 .dark-theme #features,
 .dark-theme #pricing {
@@ -195,7 +197,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  #intro > div {
+  #hero > div {
     background-color: hsla(231.4, 28%, 9.8%, 0.8);
     backdrop-filter: blur(10px) brightness(75%);
   }

@@ -9,7 +9,7 @@ import Header from "../Content/Header";
 export default function StartPage() {
   return (
     <div id="start-page" className="app-page fade-in">
-      <section id="intro">
+      <section id="hero">
         <div>
           <Header />
           <div>
