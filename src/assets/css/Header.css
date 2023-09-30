@@ -1,0 +1,39 @@
+header {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  text-transform: lowercase;
+}
+
+header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+header ul li {
+  margin-left: 2rem;
+  font-size: 1.25rem;
+}
+
+header > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .sign-in-link {
+  margin-left: 2rem;
+}
+
+header .theme-toggle {
+  color: var(--white);
+  margin-left: 2rem;
+  cursor: pointer;
+}

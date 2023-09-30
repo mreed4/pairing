@@ -30,6 +30,11 @@
   transition: color 125ms ease-out, background 125ms ease-out;
 }
 
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
 .app {
   min-height: 100vh;
   display: flex;
@@ -46,6 +51,10 @@
   background: var(--black);
 }
 
+.highlight {
+  padding: 3px;
+}
+
 .light-theme .highlight {
   color: var(--white);
   background: var(--olive-darker);
@@ -56,59 +65,26 @@
   background: var(--white);
 }
 
+.material-symbols-outlined.light_mode-symbol {
+  color: var(--gold);
+}
+
 #root {
   margin: 0 auto;
-}
-
-header {
-  margin-bottom: 2rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem;
-  text-transform: lowercase;
-}
-
-header ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
-}
-
-header ul li {
-  margin-left: 1rem;
-  font-size: 1.25rem;
-}
-
-header > div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header .sign-in-link {
-  margin-left: 2rem;
 }
 
 .button {
   display: inline-block;
   padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
+  border-radius: 1rem;
   font-size: 1.25rem;
+  border: 2px solid transparent;
 }
 
 .button.pink {
-  background-color: var(--pink);
-  color: var(--white);
-}
-
-header .theme-toggle {
-  margin-left: 2rem;
-  cursor: pointer;
+  border-color: var(--pink);
+  color: var(--pink);
+  /* color: var(--white); */
 }
 
 label {
@@ -118,12 +94,12 @@ label {
 input {
   font-size: 1.25rem;
   padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  transition: background 125ms ease-out, color 125ms ease-out;
+  border-radius: 0.5rem;
+  transition: background 125ms ease-out, color 125ms ease-out, border 125ms ease-out;
 }
 
 input:focus {
-  border: 1px solid var(--pink);
+  border: 2px solid var(--pink);
 }
 
 .light-theme input::placeholder {

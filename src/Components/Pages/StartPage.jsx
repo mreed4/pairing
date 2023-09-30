@@ -4,20 +4,25 @@ import { TextLoop } from "easy-react-text-loop";
 
 import "../../assets/css/StartPage.css";
 
+import Header from "../Content/Header";
+
 export default function StartPage() {
   return (
     <div id="start-page" className="app-page fade-in">
       <section id="intro">
         <div>
-          <p>
-            We connect you to others to help you&nbsp;
-            <TextLoop animation="tween">
-              <span className="word">create.</span>
-              <span className="word">develop.</span>
-              <span className="word">build.</span>
-              <span className="word">design.</span>
-            </TextLoop>
-          </p>
+          <Header />
+          <div>
+            <p>
+              We connect you to others to help you&nbsp;
+              <TextLoop animation="tween">
+                <span className="word">create.</span>
+                <span className="word">develop.</span>
+                <span className="word">build.</span>
+                <span className="word">design.</span>
+              </TextLoop>
+            </p>
+          </div>
         </div>
       </section>
       <section id="about">

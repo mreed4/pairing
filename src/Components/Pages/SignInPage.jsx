@@ -1,13 +1,15 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useContext } from "react";
+import { AppContext } from "../Contexts/AppContext";
 
 import "../../assets/css/SignInPage.css";
 
 export default function SignInPage() {
+  const { theme } = useContext(AppContext);
   const emailRef = useRef();
 
   useEffect(() => {
     emailRef.current.focus();
-  }, []);
+  }, [theme]);
 
   return (
     <div id="sign-in-page" className="app-page fade-in">

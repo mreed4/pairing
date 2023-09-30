@@ -15,6 +15,7 @@ html {
 
 body {
   min-height: 100vh;
+  /* overflow-y: scroll; */
 }
 
 input,
@@ -22,7 +23,7 @@ textarea,
 button {
   font-family: inherit;
   font-size: inherit;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   outline: none;
   background: none;
 }
