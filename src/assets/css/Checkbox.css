@@ -1,0 +1,44 @@
+.checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 2rem;
+  position: relative;
+  user-select: none;
+  margin-bottom: 0;
+}
+
+.checkbox input[type="checkbox"] + label:before {
+  font-family: "Material Symbols Outlined";
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 0;
+  border-radius: 2px;
+}
+
+.light-theme input[type="checkbox"] + label:before {
+  border: 2px solid var(--olive-dark);
+}
+
+.dark-theme input[type="checkbox"] + label:before {
+  border: 2px solid hsla(0, 0%, 100%, 0.2);
+}
+
+.checkbox input[type="checkbox"]:checked + label:before {
+  content: "\E5CA";
+  color: var(--white);
+  font-size: 16px;
+  text-align: center;
+  line-height: 16px;
+  background: var(--pink);
+  border-color: var(--pink);
+}

@@ -26,14 +26,14 @@
 
 .light-theme #hero > div {
   background: linear-gradient(hsla(143.2, 20.2%, 42.7%, 0.7) 10%, var(--olive) 90%);
-  backdrop-filter: blur(10px) saturate(65%);
+  backdrop-filter: blur(3px) saturate(65%);
 
   transition: background 125ms ease-out, backdrop-filter 125ms ease-out;
 }
 
 .dark-theme #hero > div {
   background: linear-gradient(hsla(231.4, 28%, 9.8%, 0.7) 10%, var(--black) 90%);
-  backdrop-filter: blur(10px) brightness(75%);
+  backdrop-filter: blur(3px) brightness(75%);
 
   transition: background 125ms ease-out, backdrop-filter 125ms ease-out;
 }

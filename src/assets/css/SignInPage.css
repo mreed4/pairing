@@ -1,19 +1,34 @@
 #sign-in-page {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
-#sign-in-page form {
+#sign-in-page > div {
   width: 400px;
-  margin-top: 8rem;
+  margin-top: 4rem;
 }
 
-#sign-in-page input {
-  margin-left: 1rem;
+#sign-in-page h2 {
+  margin-bottom: 2rem;
+}
+
+#sign-in-page label {
+  margin-bottom: 1rem;
+}
+
+#sign-in-page input[type="email"],
+#sign-in-page input[type="password"] {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+#sign-in-page input[type="checkbox"] {
+  margin-left: 0.5rem;
 }
 
 #sign-in-page button {
+  width: 100%;
   margin-top: 2rem;
 }

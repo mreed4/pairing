@@ -1,0 +1,44 @@
+#sign-up-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#sign-up-page > div {
+  width: 400px;
+  margin-top: 4rem;
+}
+
+#sign-up-page h2 {
+  margin-bottom: 2rem;
+}
+
+#sign-up-page label {
+  margin-bottom: 1rem;
+}
+
+#sign-up-page input[type="email"],
+#sign-up-page input[type="password"] {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+#sign-up-page input[type="checkbox"] {
+  margin-left: 0.5rem;
+}
+
+#sign-up-page button {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+p.helper {
+  /* margin-top: 1rem; */
+  font-size: 0.9rem;
+  color: var(--olive-darker);
+}
+
+.dark-theme p.helper {
+  color: hsla(0, 0%, 100%, 0.2);
+}

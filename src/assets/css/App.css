@@ -8,6 +8,7 @@
   --tan: #caa781;
   --tan-dark: #b59b6a;
   --pink: #fb6f92;
+  --pink-darkest: #e94b6b;
   --blue: #219ebc;
   --gold: #ffb703;
   --green: #3ec300;
@@ -76,19 +77,16 @@ h1 {
 .button {
   display: inline-block;
   padding: 0.5rem 1rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   font-size: 1.25rem;
   border: 2px solid transparent;
 }
 
 .button.pink {
-  border-color: var(--pink);
-  color: var(--pink);
-  /* color: var(--white); */
-}
-
-label {
-  margin-bottom: 0.5rem;
+  background-color: var(--pink);
+  border-bottom: 4px solid var(--pink-darkest);
+  color: var(--white);
+  display: block;
 }
 
 input {
@@ -160,6 +158,10 @@ input:focus {
 
 .green {
   color: var(--green);
+}
+
+.italic {
+  font-style: italic;
 }
 
 @keyframes fadeIn {

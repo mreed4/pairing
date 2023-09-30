@@ -6,6 +6,7 @@ import "../assets/css/App.css";
 
 import StartPage from "./Pages/StartPage";
 import SignInPage from "./Pages/SignInPage";
+import SignUpPage from "./Pages/SignUpPage";
 
 import Header from "./Content/Header";
 
@@ -19,7 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<StartPage />} />
           <Route path="/sign-in" element={<SignInPage />} />
-          <Route path="/sign-up" element={<h2>Sign Up</h2>} />
+          <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="*" element={<h2>Not Found</h2>} />
         </Routes>
       </main>
