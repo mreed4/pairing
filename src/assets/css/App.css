@@ -18,6 +18,9 @@
   --olive-dark: hsl(135, 17%, 38.9%);
   --olive-darker: hsl(135, 17%, 33.9%);
 
+  --darker: hsla(0, 0%, 0%, 0.3);
+  --darkest: hsla(0, 0%, 0%, 0.6);
+
   color-scheme: light dark;
   color: var(--white);
   background: var(--olive);
@@ -31,9 +34,45 @@
   transition: color 125ms ease-out, background 125ms ease-out;
 }
 
+main > div {
+  min-height: calc(100vh - 124px);
+}
+
+main:has(#sign-up-page),
+main:has(#sign-in-page) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: -32px;
+}
+
+main:has(#sign-up-page) > div,
+main:has(#sign-in-page) > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 h1 {
   font-size: 2.5rem;
   font-weight: 700;
+}
+
+footer {
+  flex: 1;
+  padding: 2rem 0;
+  /* border-radius: 1rem 1rem 0 0; */
+}
+
+.light-theme footer {
+  background: var(--darkest);
+}
+
+.dark-theme footer {
+  background: var(--darker);
 }
 
 .app {
@@ -41,6 +80,10 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+
+.app-page {
+  height: 100%;
 }
 
 .light-theme {
@@ -84,9 +127,14 @@ h1 {
 
 .button.pink {
   background-color: var(--pink);
-  border-bottom: 4px solid var(--pink-darkest);
+  /* border-bottom: 4px solid var(--pink-darkest); */
   color: var(--white);
   display: block;
+}
+
+form button + p {
+  margin-top: 2rem;
+  font-size: 0.9rem;
 }
 
 input {
@@ -160,8 +208,50 @@ input:focus {
   color: var(--green);
 }
 
+.white {
+  color: var(--white) !important;
+}
+
 .italic {
   font-style: italic;
+}
+
+.right {
+  text-align: right;
+}
+
+.helper {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--olive-darker);
+}
+
+.serif {
+  font-family: "Libre Baskerville", serif;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.dark-theme p.helper {
+  color: hsla(0, 0%, 100%, 0.2);
+}
+
+.helper a {
+  /* text-decoration: underline; */
+  text-underline-offset: 2px;
+}
+
+.helper.white a {
+  color: var(--pink);
+  text-decoration: underline;
+  text-decoration-color: var(--pink);
+  text-decoration-thickness: 2px;
 }
 
 @keyframes fadeIn {

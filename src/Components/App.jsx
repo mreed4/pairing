@@ -24,6 +24,9 @@ function App() {
           <Route path="*" element={<h2>Not Found</h2>} />
         </Routes>
       </main>
+      <footer>
+        <Link to="/">Home</Link>
+      </footer>
     </div>
   );
 }

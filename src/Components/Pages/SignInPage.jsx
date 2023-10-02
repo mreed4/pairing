@@ -22,7 +22,7 @@ export default function SignInPage() {
   return (
     <div id="sign-in-page" className="app-page fade-in">
       <div>
-        <h2>Come on in</h2>
+        <h2>Sign in</h2>
         <form onSubmit={handleSignIn}>
           <label htmlFor="email">Email</label>
           <input type="email" id="email" autoComplete="email" ref={emailRef} />
@@ -32,7 +32,12 @@ export default function SignInPage() {
           <button type="submit" className="button pink">
             Sign In
           </button>
-          <Link to="/sign-up">Create an account</Link>
+          <p className="helper italic right">
+            <Link to="/forgot-password">Forgot password?</Link>
+          </p>
+          <p className="helper white">
+            New to Pairings? <Link to="/sign-up">Create an account</Link>
+          </p>
         </form>
       </div>
     </div>

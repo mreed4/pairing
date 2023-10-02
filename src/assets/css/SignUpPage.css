@@ -1,13 +1,33 @@
 #sign-up-page {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center; */
+}
+
+.password-label {
+  display: flex;
   align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.capslock-icon {
+  color: var(--olive-darker);
+}
+
+.dark-theme .capslock-icon {
+  color: hsla(0, 0%, 100%, 0.2);
+}
+
+.visibility-icon {
+  user-select: none;
+  cursor: pointer;
+  margin: 0 0.5rem;
 }
 
 #sign-up-page > div {
   width: 400px;
-  margin-top: 4rem;
 }
 
 #sign-up-page h2 {
@@ -18,6 +38,7 @@
   margin-bottom: 1rem;
 }
 
+#sign-up-page input[type="text"],
 #sign-up-page input[type="email"],
 #sign-up-page input[type="password"] {
   margin-bottom: 1rem;
@@ -33,12 +54,11 @@
   margin-top: 2rem;
 }
 
-p.helper {
-  /* margin-top: 1rem; */
-  font-size: 0.9rem;
-  color: var(--olive-darker);
+#sign-up-page div + p.helper {
+  margin-top: 0;
 }
 
-.dark-theme p.helper {
-  color: hsla(0, 0%, 100%, 0.2);
+#sign-up-page button[type="submit"]:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
