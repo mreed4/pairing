@@ -8,7 +8,7 @@ import StartPage from "./Pages/StartPage";
 import SignInPage from "./Pages/SignInPage";
 import SignUpPage from "./Pages/SignUpPage";
 
-import Header from "./Content/Header";
+import Header from "./Header";
 
 function App() {
   const { theme } = useContext(AppContext);

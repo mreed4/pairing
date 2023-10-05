@@ -30,7 +30,7 @@
 }
 
 .dark-theme input[type="checkbox"] + label:before {
-  border: 2px solid hsla(0, 0%, 100%, 0.2);
+  border: 2px solid var(--black-lighter);
 }
 
 .checkbox input[type="checkbox"]:checked + label:before {

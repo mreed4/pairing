@@ -5,14 +5,21 @@
 
   --white: hsl(51.8, 50%, 95.4%);
   --white-dark: hsl(51.8, 50%, 90%);
+
   --tan: #caa781;
   --tan-dark: #b59b6a;
+
   --pink: #fb6f92;
   --pink-darkest: #e94b6b;
   --blue: #219ebc;
   --gold: #ffb703;
   --green: #3ec300;
-  --black: #121420;
+
+  --black: hsl(231.4, 28%, 9.8%); /* #121420 */
+  --black-dark: hsl(231.4, 28%, 12.8%); /* #1a1c1e */
+  --black-light: hsl(231.4, 28%, 14.8%); /* #1e2026 */
+  --black-lighter: hsl(231.4, 28%, 19.8%); /* #2a2c2c */
+
   --olive: hsl(143.2, 20.2%, 42.7%);
   --olive-light: hsl(143.2, 20.2%, 47.7%);
   --olive-dark: hsl(135, 17%, 38.9%);
@@ -44,16 +51,15 @@ main:has(#sign-in-page) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  margin-top: -32px;
 }
 
 main:has(#sign-up-page) > div,
 main:has(#sign-in-page) > div {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  margin: 5rem 0 10rem;
 }
 
 h1 {
@@ -148,14 +154,6 @@ input:focus {
   border: 2px solid var(--pink);
 }
 
-.light-theme input::placeholder {
-  color: var(--olive-darker);
-}
-
-.light-theme input:focus::placeholder {
-  color: var(--olive-dark);
-}
-
 .light-theme input[type="email"],
 .light-theme input[type="password"],
 .light-theme input[type="text"] {
@@ -173,14 +171,14 @@ input:focus {
 .dark-theme input[type="email"],
 .dark-theme input[type="password"],
 .dark-theme input[type="text"] {
-  background: hsla(0, 0%, 100%, 0.1);
+  background: var(--black-light);
   color: var(--black);
 }
 
 .dark-theme input[type="email"]:focus,
 .dark-theme input[type="password"]:focus,
 .dark-theme input[type="text"]:focus {
-  background: hsla(0, 0%, 100%, 0.2);
+  background: var(--black-lighter);
   color: var(--white);
 }
 
@@ -239,7 +237,7 @@ input:focus {
 }
 
 .dark-theme p.helper {
-  color: hsla(0, 0%, 100%, 0.2);
+  color: var(--black-lighter);
 }
 
 .helper a {

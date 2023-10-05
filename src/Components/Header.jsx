@@ -1,8 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 
-import "../../assets/css/Header.css";
+import "../assets/css/Header.css";
 
-import ThemeToggle from "../Content/ThemeToggle";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const location = useLocation();

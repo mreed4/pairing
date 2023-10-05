@@ -1,11 +1,3 @@
-#sign-in-page {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 0 8rem; */
-}
-
 #sign-in-page > div {
   width: 400px;
 }
@@ -16,6 +8,7 @@
 
 #sign-in-page label {
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 #sign-in-page input[type="email"],
@@ -28,7 +21,7 @@
   margin-left: 0.5rem;
 }
 
-#sign-in-page button {
+#sign-in-page button[type="submit"] {
   width: 100%;
   margin-top: 2rem;
 }

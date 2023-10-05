@@ -2,7 +2,8 @@ import { useRef, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../Contexts/AppContext";
 
-import Checkbox from "../Content/Checkbox";
+import Checkbox from "../Checkbox";
+import SocialsLogins from "../SocialsLogins";
 
 import "../../assets/css/SignInPage.css";
 
@@ -35,6 +36,7 @@ export default function SignInPage() {
           <p className="helper italic right">
             <Link to="/forgot-password">Forgot password?</Link>
           </p>
+          <SocialsLogins />
           <p className="helper white">
             New to Pairings? <Link to="/sign-up">Create an account</Link>
           </p>

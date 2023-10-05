@@ -4,7 +4,7 @@ import { TextLoop } from "easy-react-text-loop";
 
 import "../../assets/css/StartPage.css";
 
-import Header from "../Content/Header";
+import Header from "../Header";
 
 export default function StartPage() {
   return (

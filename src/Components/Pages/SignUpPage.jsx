@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import "../../assets/css/SignUpPage.css";
 
+import SocialsLogins from "../SocialsLogins";
+
 export default function SignUpPage() {
   const { theme } = useContext(AppContext);
 
@@ -96,6 +98,7 @@ export default function SignUpPage() {
           <button type="submit" className="button pink" disabled={isDisabled}>
             Sign Up
           </button>
+          <SocialsLogins />
           <p className="helper white">
             Already have an account? <Link to="/sign-in">Sign in</Link>
           </p>
