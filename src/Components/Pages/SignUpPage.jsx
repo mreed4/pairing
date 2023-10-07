@@ -56,7 +56,7 @@ export default function SignUpPage() {
     setVisble(!visble);
   }
 
-  const capsLockIcon = capsLock ? "visble" : "hidden";
+  const capsLockIcon = capsLock ? "visible" : "hidden";
 
   const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
 

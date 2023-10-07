@@ -1,9 +1,4 @@
 #start-page > div {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start; */
-
   max-width: 1024px;
 }
 
@@ -12,6 +7,13 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  /* min-height: 100vh; */
+}
+
+#start-page section h2 {
+  /* text-align: center; */
+  padding-bottom: 3rem !important;
+  /* color: var(--olive-dark); */
 }
 
 #hero {
@@ -68,15 +70,20 @@
 }
 
 #about,
+#testimonials,
 #features,
 #pricing {
   padding: 6rem 0;
-  border-bottom: 2px solid var(--olive-light);
   transition: border-bottom 125ms ease-out;
+}
+
+#about {
+  margin: 1rem 0 0;
 }
 
 .light-theme #hero,
 .light-theme #about,
+.light-theme #testimonials,
 .light-theme #features,
 .light-theme #pricing {
   border-bottom: 2px solid var(--olive-light);
@@ -84,18 +91,22 @@
 
 .dark-theme #hero,
 .dark-theme #about,
+.dark-theme #testimonials,
 .dark-theme #features,
 .dark-theme #pricing {
   border-bottom: 2px solid hsl(231.4, 28%, 13.8%);
 }
 
-#about {
-  margin: 1rem 0 0;
-}
-
-#about > div {
+#about > div,
+#testimonials > div,
+#features > div,
+#pricing > div {
   max-width: 1024px;
   margin: 0 auto;
+}
+
+#pricing > div {
+  width: 100%;
 }
 
 #about p {
@@ -110,11 +121,6 @@
 #about p:first-of-type {
   font-size: 2.15rem;
   color: var(--pink);
-}
-
-#features > div {
-  max-width: 1024px;
-  margin: 0 auto;
 }
 
 .features-list {
@@ -155,13 +161,18 @@
   font-size: 1.25rem;
 }
 
-#pricing > div {
-  width: 100%;
-  max-width: 1024px;
-  margin: 0 auto;
+#pricing p {
+  max-width: 75ch;
+  margin: 2rem 0;
+  padding-bottom: 2rem;
+  font-size: 1.45rem;
+  /* font-family: "Libre Baskerville", serif; */
+  font-weight: 400;
+  line-height: 1.75;
 }
 
 .pricing-plans {
+  user-select: none;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -169,10 +180,24 @@
   margin: 2rem 0;
 }
 
-.pricing-plan-labels li,
-.pricing-plans li {
-  padding: 0.5rem 0;
+.pricing-plan-labels ul li,
+.pricing-plans ul li {
+  padding: 1rem 0;
   font-size: 1.15rem;
+}
+
+.pricing-plan ul li span {
+  font-size: 1.15rem;
+}
+
+.pricing-plan-labels ul li:last-of-type,
+.pricing-plans ul li:last-of-type {
+  margin-top: 1rem;
+  padding-bottom: 0;
+}
+
+.pricing-plan-labels {
+  padding: 1.5rem 0;
 }
 
 .pricing-plan-labels * {
@@ -183,11 +208,55 @@
   visibility: hidden;
 }
 
-.pricing-plan {
-  margin: 0 4rem;
-  flex: 1;
+.pricing-plan-labels li {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
 
+.pricing-plan-labels li span {
+  margin-right: 0.5rem;
+}
+
+.pricing-plan {
+  padding: 1.5rem 4rem;
+  flex: 1;
+  border: 2px solid transparent;
   text-align: center;
+}
+
+.pricing-plan:nth-child(3),
+.pricing-plan:nth-child(4) {
+  opacity: 0.25;
+  transition: opacity 125ms ease-out;
+  cursor: pointer;
+}
+
+.pricing-plan:nth-child(3):hover,
+.pricing-plan:nth-child(4):hover {
+  opacity: 1;
+}
+
+.pricing-plan:nth-child(4) {
+  background-color: var(--olive-light);
+  border-radius: 1rem;
+  border: 2px solid var(--pink);
+  box-shadow: 0 0 1px hsla(0, 0%, 0%, 0.65), 0 0 9px hsla(0, 0%, 0%, 0.25);
+}
+
+.pricing-plan:nth-child(4) h3 {
+  color: var(--pink);
+}
+
+.dark-theme .pricing-plan:nth-child(4) {
+  background-color: var(--black-light);
+  box-shadow: 0 0 4px hsla(0, 0%, 0%, 0.9);
+}
+
+.pricing-plan:nth-child(2) {
+  margin-left: 4rem;
+  border-width: 0 2px 0 2px !important;
 }
 
 .pricing-plan li {
@@ -196,19 +265,6 @@
 
 .pricing-plans ul {
   list-style: none;
-  margin: 0;
+  margin: 2rem 0 0;
   padding: 0;
-}
-
-@media (prefers-color-scheme: dark) {
-  #hero > div {
-    background-color: hsla(231.4, 28%, 9.8%, 0.8);
-    backdrop-filter: blur(10px) brightness(75%);
-  }
-
-  #about,
-  #features,
-  #pricing {
-    border-bottom: 2px solid hsl(231.4, 28%, 13.8%);
-  }
 }
