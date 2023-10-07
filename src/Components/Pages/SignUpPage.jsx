@@ -36,6 +36,11 @@ export default function SignUpPage() {
     scrollTo(0, 0);
   }, []);
 
+  function handleSignUp(e) {
+    e.preventDefault();
+    console.log("Sign Up");
+  }
+
   function checkCapsLock(e) {
     const capsLock = e.getModifierState("CapsLock");
     if (capsLock) {
@@ -61,11 +66,6 @@ export default function SignUpPage() {
     const allFieldsAreFilled = allFields.every((field) => field.current.value !== "");
     const passwordIsValid = passwordRegex.test(passwordRef.current.value);
     setIsDisabled(!allFieldsAreFilled || !passwordIsValid);
-  }
-
-  function handleSignUp(e) {
-    e.preventDefault();
-    console.log("Sign Up");
   }
 
   return (

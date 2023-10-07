@@ -11,6 +11,7 @@
   font-weight: 700;
 }
 
+#sign-in-page input[type="text"],
 #sign-in-page input[type="email"],
 #sign-in-page input[type="password"] {
   margin-bottom: 1rem;
@@ -24,4 +25,9 @@
 #sign-in-page button[type="submit"] {
   width: 100%;
   margin-top: 2rem;
+}
+
+#sign-in-page button[type="submit"]:disabled {
+  opacity: 0.5;
+  cursor: default;
 }

@@ -48,10 +48,6 @@
   margin-top: 2rem;
 }
 
-#sign-up-page div + p.helper {
-  /* margin-top: 0; */
-}
-
 #sign-up-page button[type="submit"]:disabled {
   opacity: 0.5;
   cursor: default;
