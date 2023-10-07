@@ -6,9 +6,6 @@
   --white: hsl(51.8, 50%, 95.4%);
   --white-dark: hsl(51.8, 50%, 90%);
 
-  --tan: #caa781;
-  --tan-dark: #b59b6a;
-
   --pink: #fb6f92;
   --pink-darkest: #e94b6b;
   --blue: #219ebc;
@@ -19,6 +16,11 @@
   --black-dark: hsl(231.4, 28%, 12.8%); /* #1a1c1e */
   --black-light: hsl(231.4, 28%, 14.8%); /* #1e2026 */
   --black-lighter: hsl(231.4, 28%, 19.8%); /* #2a2c2c */
+
+  --tan: #caa781;
+  --tan-light: #d6b48a;
+  --tan-dark: #b59b6a;
+  --tan-darker: #a48e5f;
 
   --olive: hsl(143.2, 20.2%, 42.7%);
   --olive-light: hsl(143.2, 20.2%, 47.7%);
@@ -194,7 +196,7 @@ input:focus {
 .light-theme input[type="password"],
 .light-theme input[type="text"] {
   background: var(--olive-dark);
-  color: var(--black);
+  color: var(--olive-light);
 }
 
 .light-theme input[type="email"]:focus,

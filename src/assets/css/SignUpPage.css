@@ -51,4 +51,9 @@
 #sign-up-page button[type="submit"]:disabled {
   opacity: 0.5;
   cursor: default;
+  border-color: transparent;
+}
+
+#sign-up-page button[type="submit"]:disabled:active {
+  transform: none;
 }

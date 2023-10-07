@@ -30,4 +30,9 @@
 #sign-in-page button[type="submit"]:disabled {
   opacity: 0.5;
   cursor: default;
+  border-color: transparent;
+}
+
+#sign-in-page button[type="submit"]:disabled:active {
+  transform: none;
 }
