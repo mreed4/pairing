@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useRef } from "react";
-import { TextLoop } from "easy-react-text-loop";
+import ScrollToTop from "react-scroll-to-top";
 
 import "../../assets/css/StartPage.css";
 
@@ -9,18 +9,13 @@ import Header from "../Header";
 export default function StartPage() {
   return (
     <div id="start-page" className="app-page fade-in">
+      <ScrollToTop smooth className="fade-in" component={<span className="material-symbols-outlined">vertical_align_top</span>} />
       <section id="hero">
         <div>
           <Header />
           <div>
             <p>
-              We connect you to others to help you&nbsp;
-              <TextLoop animation="tween">
-                <span className="word">create.</span>
-                <span className="word">develop.</span>
-                <span className="word">build.</span>
-                <span className="word">design.</span>
-              </TextLoop>
+              We connect you with others to help you <span className="word">build</span>.
             </p>
           </div>
         </div>

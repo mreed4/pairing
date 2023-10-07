@@ -41,6 +41,10 @@
   transition: color 125ms ease-out, background 125ms ease-out;
 }
 
+#root {
+  margin: 0 auto;
+}
+
 main > div {
   min-height: calc(100vh - 124px);
 }
@@ -73,14 +77,6 @@ footer {
   flex: 1;
   padding: 2rem 0;
   /* border-radius: 1rem 1rem 0 0; */
-}
-
-.light-theme footer {
-  background: var(--darkest);
-}
-
-.dark-theme footer {
-  background: var(--darker);
 }
 
 .app {
@@ -117,12 +113,32 @@ footer {
   background: var(--white);
 }
 
-.material-symbols-outlined.light_mode-symbol {
-  color: var(--gold);
+.scroll-to-top {
+  position: fixed !important;
+  top: 2rem !important;
+  right: 2rem !important;
+  z-index: 1000 !important;
+  font-size: 1.5rem !important;
+  color: var(--white) !important;
+  background: var(--pink) !important;
+  border-radius: 50% !important;
+  padding: 0.5rem !important;
+  cursor: pointer !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+  /* transform: scale(1.25); */
+  transition: filter 125ms ease-out, transform 125ms ease-out;
 }
 
-#root {
-  margin: 0 auto;
+.scroll-to-top:hover {
+  filter: brightness(1.1);
+}
+
+.scroll-to-top:active {
+  transform: scale(1.25) !important;
+}
+
+.material-symbols-outlined.light_mode-symbol {
+  color: var(--gold);
 }
 
 .button {
@@ -147,6 +163,15 @@ footer {
 
 .button[disabled].pink:hover {
   filter: none;
+}
+
+.button.border {
+  border-top: 1px solid hsla(0, 0%, 100%, 0.35);
+  border-bottom: 1px solid hsla(0, 0%, 0%, 0.35);
+}
+
+button:active {
+  transform: scale(1.0125);
 }
 
 form button + p {

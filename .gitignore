@@ -23,6 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 
-.env
+# Old versions of website
+.versions
+
+# Local Netlify folder
 .netlify
-```
+
+# Environment variables
+.env

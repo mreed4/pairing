@@ -8,6 +8,10 @@ header {
   text-transform: lowercase;
 }
 
+header h1 {
+  /* font-family: "La Belle Aurore", cursive; */
+}
+
 header ul {
   display: flex;
   flex-direction: row;
@@ -40,4 +44,12 @@ header .theme-toggle {
   color: var(--white);
   margin-left: 2rem;
   cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 0;
 }

@@ -17,13 +17,18 @@ body {
   min-height: 100vh;
 }
 
+ol,
+ul {
+  list-style: none;
+}
+
 input,
 textarea,
 button {
   font-family: inherit;
   font-size: inherit;
-  border: 2px solid transparent;
   background: none;
+  outline: none;
 }
 
 a:focus,
@@ -33,6 +38,7 @@ button:focus {
 }
 
 input {
+  border: 2px solid transparent;
   border-color: var(--olive);
   outline: none;
   /* https://gist.github.com/nrrrdcore/3309046 */
@@ -47,6 +53,12 @@ input {
 button {
   cursor: pointer;
   border-radius: 0.5rem;
+  transform: scale(1);
+  transition: transform 125ms ease-out;
+}
+
+button:active {
+  transform: scale(1.0125);
 }
 
 label {

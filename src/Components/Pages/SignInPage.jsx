@@ -1,3 +1,5 @@
+// https://uxplanet.org/12-best-practies-for-sign-up-and-login-page-design-69d6cd045cf
+
 import { useRef, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../Contexts/AppContext";
@@ -30,7 +32,7 @@ export default function SignInPage() {
           <label htmlFor="current-password">Password</label>
           <input type="password" id="current-password" autoComplete="current-password" />
           <Checkbox id="remember-me" label="Remember Me" checked={true} />
-          <button type="submit" className="button pink">
+          <button type="submit" className="button border pink">
             Sign In
           </button>
           <p className="helper italic right">
