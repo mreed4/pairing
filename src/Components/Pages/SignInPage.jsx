@@ -13,15 +13,18 @@ export default function SignInPage() {
   const { theme } = useContext(AppContext);
   const emailRef = useRef();
 
-  function handleSignIn(e) {
-    e.preventDefault();
-    console.log("Sign In");
-  }
-
   useEffect(() => {
     emailRef.current.focus();
   }, [theme]);
 
+  useEffect(() => {
+    scrollTo(0, 0);
+  }, []);
+
+  function handleSignIn(e) {
+    e.preventDefault();
+    console.log("Sign In");
+  }
   return (
     <div id="sign-in-page" className="app-page fade-in">
       <div>

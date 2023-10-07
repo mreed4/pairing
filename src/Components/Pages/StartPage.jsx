@@ -1,5 +1,5 @@
-import { Link, useLocation } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import ScrollToTop from "react-scroll-to-top";
 
 import "../../assets/css/StartPage.css";
@@ -7,6 +7,10 @@ import "../../assets/css/StartPage.css";
 import Header from "../Header";
 
 export default function StartPage() {
+  useEffect(() => {
+    scrollTo(0, 0);
+  }, []);
+
   return (
     <div id="start-page" className="app-page fade-in">
       <ScrollToTop smooth className="fade-in" component={<span className="material-symbols-outlined">vertical_align_top</span>} />

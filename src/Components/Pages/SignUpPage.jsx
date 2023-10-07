@@ -20,6 +20,22 @@ export default function SignUpPage() {
   const [capsLock, setCapsLock] = useState(null);
   const [visble, setVisble] = useState(false); // [true, function(){}
 
+  useEffect(() => {
+    firstNameRef.current.focus();
+  }, [theme]);
+
+  useEffect(() => {
+    window.addEventListener("keydown", checkCapsLock);
+
+    return () => {
+      window.removeEventListener("keydown", checkCapsLock);
+    };
+  }, []);
+
+  useEffect(() => {
+    scrollTo(0, 0);
+  }, []);
+
   function checkCapsLock(e) {
     const capsLock = e.getModifierState("CapsLock");
     if (capsLock) {
@@ -51,18 +67,6 @@ export default function SignUpPage() {
     e.preventDefault();
     console.log("Sign Up");
   }
-
-  useEffect(() => {
-    firstNameRef.current.focus();
-  }, [theme]);
-
-  useEffect(() => {
-    window.addEventListener("keydown", checkCapsLock);
-
-    return () => {
-      window.removeEventListener("keydown", checkCapsLock);
-    };
-  }, []);
 
   return (
     <div id="sign-up-page" className="app-page fade-in">

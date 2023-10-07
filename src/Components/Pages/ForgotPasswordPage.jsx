@@ -8,15 +8,18 @@ export default function ForgotPasswordPage() {
   const { theme } = useContext(AppContext);
   const emailRef = useRef();
 
-  function handleForgotPassword(e) {
-    e.preventDefault();
-    console.log("Forgot Password");
-  }
-
   useEffect(() => {
     emailRef.current.focus();
   }, [theme]);
 
+  useEffect(() => {
+    scrollTo(0, 0);
+  }, []);
+
+  function handleForgotPassword(e) {
+    e.preventDefault();
+    console.log("Forgot Password");
+  }
   return (
     <div id="forgot-password-page" className="app-page fade-in">
       <div>
