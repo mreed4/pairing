@@ -46,7 +46,8 @@ main > div {
 }
 
 main:has(#sign-up-page),
-main:has(#sign-in-page) {
+main:has(#sign-in-page),
+main:has(#forgot-password-page) {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,7 +55,8 @@ main:has(#sign-in-page) {
 }
 
 main:has(#sign-up-page) > div,
-main:has(#sign-in-page) > div {
+main:has(#sign-in-page) > div,
+main:has(#forgot-password-page) > div {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -128,14 +130,23 @@ footer {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   font-size: 1.25rem;
+  color: var(--white);
   border: 2px solid transparent;
+  transition: filter 125ms ease-out;
+}
+
+.button:hover {
+  filter: brightness(1.1);
 }
 
 .button.pink {
   background-color: var(--pink);
-  /* border-bottom: 4px solid var(--pink-darkest); */
   color: var(--white);
   display: block;
+}
+
+.button[disabled].pink:hover {
+  filter: none;
 }
 
 form button + p {

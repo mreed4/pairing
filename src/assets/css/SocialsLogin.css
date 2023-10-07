@@ -36,17 +36,11 @@
 }
 
 .socials-logins button {
-  /* padding: 0; */
-  /* border: 0; */
   width: 100%;
-  border-radius: 0.5rem;
   margin: 0.5rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: var(--olive-light); */
-  transition: background-color 175ms ease-in-out;
-  /* box-shadow: 0 0 15px 0 var(--olive-darker); */
 }
 
 .socials-logins button i {
@@ -56,26 +50,8 @@
 
 .button:has(.fa-google) {
   background-color: #db4437;
-  /* border-bottom: 4px solid #b0281a; */
-}
-
-.button:has(.fa-facebook) {
-  background-color: #4267b2;
-  /* border-bottom: 4px solid #2a4b9b; */
 }
 
 .button:has(.fa-github) {
   background-color: #24292e;
-  /* border-bottom: 4px solid #141518; */
-}
-
-.button:has(.fa-linkedin) {
-  background-color: #0077b5;
-  /* border-bottom: 4px solid #046293; */
-}
-
-.button:has(.fa-microsoft) {
-  background-color: #eee;
-  color: var(--black);
-  /* border-bottom: 4px solid #1f1f1f; */
 }

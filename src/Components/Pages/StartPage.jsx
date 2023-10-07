@@ -74,11 +74,11 @@ export default function StartPage() {
         </div>
       </section>
       <section id="pricing">
-        <div>
+        {/* <div>
           <h2>Pricing</h2>
           <p>Pairings is free to use.</p>
-        </div>
-        {/* <div>
+        </div> */}
+        <div>
           <h2>Pricing</h2>
           <div className="pricing-plans">
             <div className="pricing-plan-labels">
@@ -126,7 +126,7 @@ export default function StartPage() {
               </ul>
             </div>
           </div>
-        </div> */}
+        </div>
       </section>
       <section id="sign-up">
         <h2>Sign Up</h2>

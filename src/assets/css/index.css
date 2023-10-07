@@ -23,8 +23,13 @@ button {
   font-family: inherit;
   font-size: inherit;
   border: 2px solid transparent;
-
   background: none;
+}
+
+a:focus,
+button:focus {
+  outline: 3px solid hsla(0, 0%, 100%, 0.25);
+  border-radius: 0.5rem;
 }
 
 input {
