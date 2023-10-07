@@ -162,11 +162,11 @@
 }
 
 #pricing p {
-  max-width: 75ch;
+  /* max-width: 75ch; */
   margin: 2rem 0;
   padding-bottom: 2rem;
-  font-size: 1.45rem;
-  /* font-family: "Libre Baskerville", serif; */
+  font-size: 1.65rem;
+  font-family: "Libre Baskerville", serif;
   font-weight: 400;
   line-height: 1.75;
 }

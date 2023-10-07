@@ -85,9 +85,9 @@ function PricingSection() {
       <div>
         <h2>Pricing</h2>
         <p>
-          Currently, Pairings is free to use! We may add a paid tier in the future, but we will always have a free tier. See the table below
-          for more details.
+          <span className="highlight">Pairings is free to use!</span>
         </p>
+        <p>We may add a paid tier in the future, but we will always have a free tier. See the table below for more details.</p>
         <div className="pricing-plans">
           <div className="pricing-plan-labels">
             <h3>Labels</h3>
