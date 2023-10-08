@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState, useContext } from "react";
+import { AppContext } from "../Contexts/AppContext";
 import ScrollToTop from "react-scroll-to-top";
 
 import "../../assets/css/StartPage.css";
+import "../../assets/css/StartPage/HeroSection.css";
+import "../../assets/css/StartPage/AboutSection.css";
+import "../../assets/css/StartPage/FeaturesSection.css";
+import "../../assets/css/StartPage/PricingSection.css";
+import "../../assets/css/StartPage/TestimonialsSection.css";
 
 import Header from "../Header";
 
@@ -160,18 +166,83 @@ function PricingSection() {
 }
 
 function TestimonialsSection() {
+  const { users } = useContext(AppContext);
+  const [testimonials, setTestimonials] = useState([]);
+
+  const testimonialText = [
+    "I was able to find someone to work with on my project. I'm so glad I found this site!",
+    "Pairings is exactly what I've been looking for!",
+    "I can't understand how I've been living without Pairings.",
+    "I have been using Pairings for over a year now and I love it! I can't imagine life without it",
+    "YES! This is what I've been looking for!",
+    "Finally! A place where I can find someone to work with!",
+    "Being a new developer, I was having trouble finding someone to work with. Pairings helped me find someone to work with.",
+  ];
+
+  function getRandomAvatar(gender) {
+    // gender = gender.toLowerCase();
+    if (gender === "Female") {
+      return `https://xsgames.co/randomusers/avatar.php?g=female`;
+    } else if (gender === "Male") {
+      return `https://xsgames.co/randomusers/avatar.php?g=male`;
+    } else {
+      return `https://xsgames.co/randomusers/avatar.php?g=female`;
+    }
+  }
+
+  function addRandomTestimonial() {
+    function getRandomText() {
+      const randomText = testimonialText[Math.floor(Math.random() * testimonialText.length)];
+      return randomText;
+    }
+
+    const randomIndex = Math.floor(Math.random() * users.length);
+    const randomUser = users[randomIndex];
+    const testimonial = {
+      name: `${randomUser?.first_name}`,
+      text: getRandomText(),
+      role: randomUser?.role,
+      avatar: getRandomAvatar(randomUser?.gender),
+    };
+
+    setTestimonials([...testimonials, testimonial]);
+  }
+
+  useEffect(() => {
+    addRandomTestimonial();
+  }, [users]);
+
   return (
     <section id="testimonials">
       <div>
         <h2>Testimonials</h2>
+        <div className="testimonials-list">
+          {testimonials.slice(1, testimonialText.length).map((testimonial, index) => (
+            <div key={index} className="testimonial">
+              <img src={testimonial.avatar} alt={testimonial.name} />
+              <div>
+                <p className="testimonial-text">{testimonial.text}</p>
+                <hr />
+                <span className="name">
+                  {testimonial.name}, {testimonial.role}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
 
 export default function StartPage() {
+  const { getUsers } = useContext(AppContext);
   useEffect(() => {
     scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    getUsers();
   }, []);
 
   return (

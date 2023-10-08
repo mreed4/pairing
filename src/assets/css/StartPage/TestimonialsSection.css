@@ -1,0 +1,87 @@
+#testimonials hr {
+  width: 6rem;
+  margin: 0.5rem 0;
+  border: 0;
+}
+
+#testimonials p {
+  font-size: 1.25rem;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  line-height: 2;
+  /* width: 50%; */
+}
+
+.light-theme #testimonials hr {
+  border-top: 2px solid var(--olive-light);
+}
+
+.dark-theme #testimonials hr {
+  border-top: 2px solid var(--black-light);
+}
+
+.testimonials-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 2rem 0;
+  margin: 1rem 0;
+  width: 100%;
+  border-radius: 3rem;
+}
+
+.testimonial > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.testimonial img {
+  display: block;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+}
+
+.testimonial:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.testimonial:nth-child(even) img {
+  margin-left: 2rem;
+}
+
+.testimonial:nth-child(even) > div {
+  align-items: flex-end;
+}
+
+.testimonial:nth-child(even) > div p {
+  text-align: right;
+  margin-left: 40%;
+}
+
+.testimonial:nth-child(odd) img {
+  margin-right: 2rem;
+}
+
+.testimonial:nth-child(odd) > div p {
+  margin-right: 40%;
+}
+
+.testimonial .name {
+  color: var(--pink);
+  margin-bottom: 0.5rem;
+}

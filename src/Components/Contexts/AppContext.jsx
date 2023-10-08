@@ -3,7 +3,14 @@ import { createContext, useState, useEffect } from "react";
 const AppContext = createContext();
 
 function AppProvider({ children }) {
+  const [users, setUsers] = useState([]);
   const [theme, setTheme] = useState("dark-theme");
+
+  async function getUsers() {
+    const response = await fetch("/src/data/MOCK_DATA.json");
+    const data = await response.json();
+    setUsers(data);
+  }
 
   (function getTheme() {
     const theme = localStorage.getItem("theme");
@@ -25,9 +32,11 @@ function AppProvider({ children }) {
   }, [theme]);
 
   const value = {
+    users,
     theme,
     setTheme,
     toggleTheme,
+    getUsers,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
