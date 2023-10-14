@@ -26,7 +26,7 @@
 }
 
 .dark-theme .feature {
-  border-bottom: 2px solid var(--black);
+  border-bottom: 2px solid var(--black-lighter);
 }
 
 .feature p,
