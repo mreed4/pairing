@@ -5,11 +5,10 @@
 }
 
 #testimonials p {
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
   line-height: 2;
-  /* width: 50%; */
 }
 
 .light-theme #testimonials hr {
@@ -51,9 +50,18 @@
 
 .testimonial img {
   display: block;
-  width: 7rem;
-  height: 7rem;
+  width: 10rem;
+  height: 10rem;
   border-radius: 50%;
+  filter: contrast(1.1) brightness(0.9);
+  transition: filter 125ms ease-in-out, transform 125ms ease-in-out;
+  border: 2px solid var(--pink);
+  box-shadow: 0 1px 5px 0 hsla(0, 0%, 0%, 0.4);
+}
+
+.testimonial:hover img {
+  filter: none;
+  transform: scale(1.1);
 }
 
 .testimonial:nth-child(even) {

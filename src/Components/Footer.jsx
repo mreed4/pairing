@@ -35,7 +35,7 @@ export default function Footer() {
           <a href="https://www.pexels.com/" target="_blank" rel="noreferrer">
             Pexels
           </a>
-          .
+          . The testimonials use mock data through and through.
         </p>
       </div>
     </footer>
