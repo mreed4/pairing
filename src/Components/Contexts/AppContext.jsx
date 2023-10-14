@@ -7,16 +7,16 @@ function AppProvider({ children }) {
   const [theme, setTheme] = useState("dark-theme");
 
   async function getUsers() {
-    const response = await fetch("/src/data/MOCK_DATA.json");
+    const response = await fetch("./data/MOCK_DATA.json");
     const data = await response.json();
     setUsers(data);
   }
 
-  (function getTheme() {
+  function getTheme() {
     const theme = localStorage.getItem("theme");
     if (theme) return theme;
     return "light-theme";
-  })();
+  }
 
   function toggleTheme() {
     if (theme === "light-theme") setTheme("dark-theme");
@@ -34,6 +34,7 @@ function AppProvider({ children }) {
   const value = {
     users,
     theme,
+    getTheme,
     setTheme,
     toggleTheme,
     getUsers,

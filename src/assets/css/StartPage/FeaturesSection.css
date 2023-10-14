@@ -9,7 +9,7 @@
 
 .feature {
   width: calc(100% / 2 - 2rem);
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .feature p,

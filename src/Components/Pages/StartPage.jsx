@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext, useMemo } from "react";
 import { AppContext } from "../Contexts/AppContext";
 import ScrollToTop from "react-scroll-to-top";
 
@@ -179,37 +179,35 @@ function TestimonialsSection() {
     "Being a new developer, I was having trouble finding someone to work with. Pairings helped me find someone to work with.",
   ];
 
-  function getRandomAvatar(gender) {
-    // gender = gender.toLowerCase();
-    if (gender === "Female") {
-      return `https://xsgames.co/randomusers/avatar.php?g=female`;
-    } else if (gender === "Male") {
-      return `https://xsgames.co/randomusers/avatar.php?g=male`;
-    } else {
-      return `https://xsgames.co/randomusers/avatar.php?g=female`;
+  function getTestimonials() {
+    const dummyTestimonials = [];
+
+    for (let i = 0; i < testimonialText.length; i++) {
+      function getAvatar(gender) {
+        gender = gender?.toLowerCase();
+        const random = Math.floor(Math.random() * 75);
+        if (gender === "male" || gender === "female") {
+          return `https://xsgames.co/randomusers/assets/avatars/${gender}/${random}.jpg`;
+        } else {
+          return `https://xsgames.co/randomusers/avatar.php?g=female`;
+        }
+      }
+
+      const index = Math.floor(Math.random() * users.length);
+      const user = users[index];
+      dummyTestimonials.push({
+        avatar: getAvatar(user?.gender),
+        name: user?.first_name,
+        // gender: user?.gender,
+        role: user?.role,
+        text: testimonialText[i],
+      });
     }
+    setTestimonials([testimonials, ...dummyTestimonials]);
   }
 
-  function addRandomTestimonial() {
-    function getRandomText() {
-      const randomText = testimonialText[Math.floor(Math.random() * testimonialText.length)];
-      return randomText;
-    }
-
-    const randomIndex = Math.floor(Math.random() * users.length);
-    const randomUser = users[randomIndex];
-    const testimonial = {
-      name: `${randomUser?.first_name}`,
-      text: getRandomText(),
-      role: randomUser?.role,
-      avatar: getRandomAvatar(randomUser?.gender),
-    };
-
-    setTestimonials([...testimonials, testimonial]);
-  }
-
-  useEffect(() => {
-    addRandomTestimonial();
+  useMemo(() => {
+    getTestimonials();
   }, [users]);
 
   return (
@@ -217,14 +215,14 @@ function TestimonialsSection() {
       <div>
         <h2>Testimonials</h2>
         <div className="testimonials-list">
-          {testimonials.slice(1, testimonialText.length).map((testimonial, index) => (
+          {testimonials.slice(1).map((testimonial, index) => (
             <div key={index} className="testimonial">
               <img src={testimonial.avatar} alt={testimonial.name} />
               <div>
                 <p className="testimonial-text">{testimonial.text}</p>
                 <hr />
                 <span className="name">
-                  {testimonial.name}, {testimonial.role}
+                  {testimonial.name}, {testimonial.role} {testimonial.gender}
                 </span>
               </div>
             </div>
