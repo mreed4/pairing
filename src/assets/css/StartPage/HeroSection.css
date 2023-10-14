@@ -42,7 +42,7 @@
 
 #hero p {
   margin-top: -1em;
-  font-size: 6rem;
+  font-size: 4rem;
   color: var(--white);
   user-select: none;
 }

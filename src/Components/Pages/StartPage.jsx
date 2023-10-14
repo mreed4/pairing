@@ -44,41 +44,58 @@ function AboutSection() {
 }
 
 function FeaturesSection() {
+  const features = [
+    {
+      name: "Kanban Board",
+      icon: "view_kanban",
+      description: "Create a kanban board to keep track of your project.",
+    },
+    {
+      name: "Chat",
+      icon: "speaker_notes",
+      description: "Create a chat for your project. Talk about your project, and ask questions.",
+    },
+    {
+      name: "Project calendar",
+      icon: "calendar_month",
+      description: "Create a calendar for your project. Keep track of important dates, and deadlines.",
+    },
+    {
+      name: "Project generator",
+      icon: "stars",
+      description: "Generate a project for you to work on with someone else.",
+    },
+    {
+      name: "Code review",
+      icon: "code_blocks",
+      description: "Get your code reviewed by someone. You can also review someone else's code.",
+    },
+    {
+      name: "Project finder",
+      icon: "manage_search",
+      description: "Find a project to work on with someone else.",
+    },
+    {
+      name: "Project manager",
+      icon: "engineering",
+      description: "Manage your projects. Keep track of your projects, and the people you are working with.",
+    },
+  ];
+
   return (
     <section id="features">
       <div>
         <h2>Features</h2>
         <div className="features-list">
-          <div className="feature">
-            <h3>
-              <span className="material-symbols-outlined">view_kanban</span>Kanban Board
-            </h3>
-            <p>Create a kanban board to keep track of your project.</p>
-          </div>
-          <div className="feature">
-            <h3>
-              <span className="material-symbols-outlined">speaker_notes</span>Chat
-            </h3>
-            <p>Create a chat for your project. Talk about your project, and ask questions.</p>
-          </div>
-          <div className="feature">
-            <h3>
-              <span className="material-symbols-outlined">calendar_month</span>Project calendar
-            </h3>
-            <p>Create a calendar for your project. Keep track of important dates, and deadlines.</p>
-          </div>
-          <div className="feature">
-            <h3>
-              <span className="material-symbols-outlined">stars</span>Project generator
-            </h3>
-            <p>Generate a project for you to work on with someone else.</p>
-          </div>
-          <div className="feature">
-            <h3>
-              <span className="material-symbols-outlined">code_blocks</span>Code review
-            </h3>
-            <p>Get your code reviewed by someone. You can also review someone else's code.</p>
-          </div>
+          {features.map((feature, index) => (
+            <div key={index} className="feature">
+              <h3>
+                <span className="material-symbols-outlined">{feature.icon}</span>
+                {feature.name}
+              </h3>
+              <p>{feature.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

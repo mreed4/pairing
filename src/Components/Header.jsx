@@ -8,20 +8,17 @@ export default function Header() {
   const location = useLocation();
 
   function StartPageGroup() {
+    const listItems = ["about", "testimonials", "features", "pricing"];
+
     return (
       <>
-        <li>
-          <a href="#about">About</a>
-        </li>
-        <li>
-          <a href="#testimonials">Testimonials</a>
-        </li>
-        <li>
-          <a href="#features">Features</a>
-        </li>
-        <li>
-          <a href="#pricing">Pricing</a>
-        </li>
+        {listItems.map((item, i) => (
+          <li key={i}>
+            <a href={`#${item}`}>
+              {item[0].toUpperCase() + item.slice(1)} <span className="material-symbols-outlined">tag</span>
+            </a>
+          </li>
+        ))}
       </>
     );
   }

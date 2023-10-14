@@ -1,3 +1,11 @@
+#features {
+  background-color: var(--olive-light);
+}
+
+.dark-theme #features {
+  background-color: var(--black-light);
+}
+
 .features-list {
   margin-top: 2rem;
   display: flex;
@@ -9,7 +17,16 @@
 
 .feature {
   width: calc(100% / 2 - 2rem);
+  padding-bottom: 4rem;
   margin-bottom: 4rem;
+}
+
+.light-theme .feature {
+  border-bottom: 2px solid var(--olive-lighter);
+}
+
+.dark-theme .feature {
+  border-bottom: 2px solid var(--black);
 }
 
 .feature p,

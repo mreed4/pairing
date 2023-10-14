@@ -5,7 +5,7 @@
 }
 
 #testimonials p {
-  font-size: 1.75rem;
+  font-size: 1.45rem;
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
   line-height: 2;
@@ -34,10 +34,19 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 2rem 0;
+  padding: 6rem 0;
   margin: 1rem 0;
   width: 100%;
-  border-radius: 3rem;
+  /* border-radius: 3rem; */
+  border-bottom: 2px solid var(--olive-light);
+}
+
+.dark-theme .testimonial {
+  border-bottom: 2px solid var(--black-light);
+}
+
+.testimonial:last-child {
+  border-bottom: none;
 }
 
 .testimonial > div {
@@ -50,8 +59,8 @@
 
 .testimonial img {
   display: block;
-  width: 10rem;
-  height: 10rem;
+  width: 7.5rem;
+  height: 7.5rem;
   border-radius: 50%;
   filter: contrast(1.1) brightness(0.9);
   transition: filter 125ms ease-in-out, transform 125ms ease-in-out;
@@ -61,7 +70,7 @@
 
 .testimonial:hover img {
   filter: none;
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
 }
 
 .testimonial:nth-child(even) {

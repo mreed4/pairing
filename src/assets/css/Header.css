@@ -31,12 +31,33 @@ header ul li {
   font-size: 1.25rem;
 }
 
+header ul li a {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li a .material-symbols-outlined {
+  margin-right: 0.25rem;
+  font-size: 90%;
+  opacity: 0.1;
+  transition: opacity 125ms ease-in-out;
+}
+
+header ul li a:hover .material-symbols-outlined {
+  opacity: 0.6;
+}
+
 .start-page-nav ul li:first-child {
   margin-left: 0;
 }
 
 header .sign-in-link {
   margin-left: 2rem;
+  background-color: transparent !important;
+  border: 2px solid var(--pink) !important;
+  color: var(--pink) !important;
 }
 
 header .theme-toggle {

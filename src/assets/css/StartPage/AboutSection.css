@@ -1,5 +1,10 @@
 #about {
-  margin: 1rem 0 0;
+  /* margin: 1rem 0 0; */
+  background-color: var(--olive-light);
+}
+
+.dark-theme #about {
+  background-color: var(--black-light);
 }
 
 #about p {
