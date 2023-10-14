@@ -38,17 +38,19 @@ export default function Header() {
 
   return (
     <header>
-      <Link to="/">
-        <h1>Pairings</h1>
-      </Link>
       <div>
-        <nav>
-          <ul className="main-nav">
-            {location.pathname === "/" && <StartPageGroup />}
-            {location.pathname !== "/sign-in" && <SignIn />}
-          </ul>
-        </nav>
-        <ThemeToggle />
+        <Link to="/">
+          <h1>Pairings</h1>
+        </Link>
+        <div>
+          <nav>
+            <ul className="main-nav">
+              {location.pathname === "/" && <StartPageGroup />}
+              {location.pathname !== "/sign-in" && <SignIn />}
+            </ul>
+          </nav>
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );

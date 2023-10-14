@@ -86,6 +86,77 @@ function FeaturesSection() {
 }
 
 function PricingSection() {
+  function PricingTable() {
+    return (
+      <div className="pricing-plans">
+        <div className="pricing-plan-labels">
+          <h3>Labels</h3>
+          <ul>
+            <li>
+              <span className="material-symbols-outlined">stars</span>Projects
+            </li>
+            <li>
+              <span className="material-symbols-outlined">view_kanban</span>Kanban boards
+            </li>
+            <li>
+              <span className="material-symbols-outlined">speaker_notes</span>Chats
+            </li>
+            <li>
+              <span className="material-symbols-outlined">calendar_month</span>Calendars
+            </li>
+            <li>
+              <span className="material-symbols-outlined">code_blocks</span>Code reviews
+            </li>
+            <li>Price</li>
+          </ul>
+        </div>
+        <div className="pricing-plan">
+          <h3>Free</h3>
+          <ul>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>5</li>
+            <li>$0 a month</li>
+          </ul>
+        </div>
+        <div className="pricing-plan">
+          <h3>Plus</h3>
+          <ul>
+            <li>5</li>
+            <li>5</li>
+            <li>5</li>
+            <li>5</li>
+            <li>15</li>
+            <li>$5 a month</li>
+          </ul>
+        </div>
+        <div className="pricing-plan">
+          <h3>Pro</h3>
+          <ul>
+            <li>
+              <span className="material-symbols-outlined">all_inclusive</span>
+            </li>
+            <li>
+              <span className="material-symbols-outlined">all_inclusive</span>
+            </li>
+            <li>
+              <span className="material-symbols-outlined">all_inclusive</span>
+            </li>
+            <li>
+              <span className="material-symbols-outlined">all_inclusive</span>
+            </li>
+            <li>
+              <span className="material-symbols-outlined">all_inclusive</span>
+            </li>
+            <li>$10 a month</li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <section id="pricing">
       <div>
@@ -93,73 +164,8 @@ function PricingSection() {
         <p>
           <span className="highlight">Pairings is free to use!</span>
         </p>
-        <p>We may add a paid tier in the future, but we will always have a free tier. See the table below for more details.</p>
-        <div className="pricing-plans">
-          <div className="pricing-plan-labels">
-            <h3>Labels</h3>
-            <ul>
-              <li>
-                <span className="material-symbols-outlined">stars</span>Projects
-              </li>
-              <li>
-                <span className="material-symbols-outlined">view_kanban</span>Kanban boards
-              </li>
-              <li>
-                <span className="material-symbols-outlined">speaker_notes</span>Chats
-              </li>
-              <li>
-                <span className="material-symbols-outlined">calendar_month</span>Calendars
-              </li>
-              <li>
-                <span className="material-symbols-outlined">code_blocks</span>Code reviews
-              </li>
-              <li>Price</li>
-            </ul>
-          </div>
-          <div className="pricing-plan">
-            <h3>Free</h3>
-            <ul>
-              <li>1</li>
-              <li>1</li>
-              <li>1</li>
-              <li>1</li>
-              <li>5</li>
-              <li>$0 a month</li>
-            </ul>
-          </div>
-          <div className="pricing-plan">
-            <h3>Plus</h3>
-            <ul>
-              <li>5</li>
-              <li>5</li>
-              <li>5</li>
-              <li>5</li>
-              <li>15</li>
-              <li>$5 a month</li>
-            </ul>
-          </div>
-          <div className="pricing-plan">
-            <h3>Pro</h3>
-            <ul>
-              <li>
-                <span className="material-symbols-outlined">all_inclusive</span>
-              </li>
-              <li>
-                <span className="material-symbols-outlined">all_inclusive</span>
-              </li>
-              <li>
-                <span className="material-symbols-outlined">all_inclusive</span>
-              </li>
-              <li>
-                <span className="material-symbols-outlined">all_inclusive</span>
-              </li>
-              <li>
-                <span className="material-symbols-outlined">all_inclusive</span>
-              </li>
-              <li>$10 a month</li>
-            </ul>
-          </div>
-        </div>
+        <p>We may add a paid tier in the future, but we will always have a free tier.</p>
+        {false && <PricingTable />}
       </div>
     </section>
   );

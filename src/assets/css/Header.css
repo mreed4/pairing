@@ -1,15 +1,21 @@
 header {
   margin-bottom: 2rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   padding: 2rem;
   text-transform: lowercase;
 }
 
-header h1 {
-  /* font-family: "La Belle Aurore", cursive; */
+header > div {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+header > div,
+header > div > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header ul {
@@ -23,13 +29,6 @@ header ul {
 header ul li {
   margin-left: 2rem;
   font-size: 1.25rem;
-}
-
-header > div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .start-page-nav ul li:first-child {
