@@ -3,25 +3,10 @@ import { Link, useLocation } from "react-router-dom";
 import "../assets/css/Header.css";
 
 import ThemeToggle from "./ThemeToggle";
+import StartPageNavLinks from "./StartPageNavLinks";
 
 export default function Header() {
   const location = useLocation();
-
-  function StartPageGroup() {
-    const listItems = ["about", "testimonials", "features", "pricing"];
-
-    return (
-      <>
-        {listItems.map((item, i) => (
-          <li key={i}>
-            <a href={`#${item}`}>
-              {item[0].toUpperCase() + item.slice(1)} <span className="material-symbols-outlined">tag</span>
-            </a>
-          </li>
-        ))}
-      </>
-    );
-  }
 
   function SignIn() {
     return (
@@ -42,7 +27,7 @@ export default function Header() {
         <div>
           <nav>
             <ul className="main-nav">
-              {location.pathname === "/" && <StartPageGroup />}
+              {location.pathname === "/" && <StartPageNavLinks />}
               {location.pathname !== "/sign-in" && <SignIn />}
             </ul>
           </nav>

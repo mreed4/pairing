@@ -1,20 +1,38 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import "../assets/css/Footer.css";
 
 export default function Footer() {
+  const location = useLocation();
+
   return (
     <footer>
       <div className="footer-top">
         <div className="footer-logo">
-          <Link to="/">
-            <span className="logo">pairings</span>
-          </Link>
+          {location.pathname === "/" && (
+            <a href="/#" className="logo-link">
+              <span className="logo">pairings</span>
+            </a>
+          )}
+          {location.pathname !== "/" && (
+            <Link to="/" className="logo-link">
+              <span className="logo">pairings</span>
+            </Link>
+          )}
         </div>
         <div className="footer-links">
           <ol>
             <li>
-              <Link to="/">Home</Link>
+              {location.pathname === "/" && (
+                <a href="/#" className="home-link">
+                  <span className="material-symbols-outlined">vertical_align_top</span> Top
+                </a>
+              )}
+              {location.pathname !== "/" && (
+                <Link to="/" className="home-link">
+                  Home
+                </Link>
+              )}
             </li>
             <li>
               <Link to="/sign-in">Sign In</Link>

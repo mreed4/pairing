@@ -29,6 +29,11 @@
   border-bottom: 2px solid var(--black-lighter);
 }
 
+.feature:nth-child(5),
+.feature:nth-child(6) {
+  border: none;
+}
+
 .feature p,
 .feature h3 {
   font-size: 1.5rem;

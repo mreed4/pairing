@@ -62,14 +62,14 @@
   width: 7.5rem;
   height: 7.5rem;
   border-radius: 50%;
-  filter: contrast(1.1) brightness(0.9);
+  /* filter: contrast(1.1) brightness(0.9) saturate(1.1) grayscale(1); */
   transition: filter 125ms ease-in-out, transform 125ms ease-in-out;
   border: 2px solid var(--pink);
   box-shadow: 0 1px 5px 0 hsla(0, 0%, 0%, 0.4);
 }
 
 .testimonial:hover img {
-  filter: none;
+  /* filter: none; */
   /* transform: scale(1.1); */
 }
 

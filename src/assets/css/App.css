@@ -4,6 +4,8 @@
   font-weight: 400;
 
   --white: hsl(51.8, 50%, 95.4%);
+  --white-semi-opaque: hsla(51.8, 50%, 95.4%, 0.65);
+  --white-opaque: hsla(51.8, 50%, 95.4%, 0.65);
   --white-dark: hsl(51.8, 50%, 90%);
 
   --pink: #fb6f92;
@@ -13,9 +15,14 @@
   --green: #3ec300;
 
   --black: hsl(231.4, 28%, 9.8%); /* #121420 */
+  --black-semi-opaque: hsla(231.4, 28%, 9.8%, 0.45);
   --black-dark: hsl(231.4, 28%, 12.8%); /* #1a1c1e */
+  --black-dark-semi-opaque: hsla(231.4, 28%, 12.8%, 0.45);
+  --black-ultra-dark: hsl(231.4, 28%, 13.8%); /* #1c1e20 */
+  --black-ultra-dark-semi-opaque: hsla(231.4, 28%, 4.8%, 0.85);
   --black-light: hsl(231.4, 28%, 14.8%); /* #1e2026 */
   --black-lighter: hsl(231.4, 28%, 19.8%); /* #2a2c2c */
+  --black-lightest-semi-opaque: hsla(231.4, 28%, 19.8%, 0.75);
 
   --tan: #caa781;
   --tan-light: #d6b48a;
@@ -23,10 +30,13 @@
   --tan-darker: #a48e5f;
 
   --olive: hsl(143.2, 20.2%, 42.7%);
+  --olive-semi-opaque: hsla(143.2, 20.2%, 42.7%, 0.75);
   --olive-light: hsl(143.2, 20.2%, 47.7%);
   --olive-lighter: hsl(143.2, 20.2%, 52.7%);
+  --olive-lightest-semi-opaque: hsla(143.2, 20.2%, 52.7%, 0.75);
   --olive-dark: hsl(135, 17%, 38.9%);
   --olive-darker: hsl(135, 17%, 33.9%);
+  --olive-ultra-dark-semi-opaque: hsla(142, 20%, 8%, 0.75);
 
   --darker: hsla(0, 0%, 0%, 0.3);
   --darkest: hsla(0, 0%, 0%, 0.6);
@@ -106,7 +116,7 @@ h1 {
 
 .light-theme .highlight {
   color: var(--white);
-  background: var(--olive-darker);
+  background: var(--black-dark);
 }
 
 .dark-theme .highlight {
@@ -116,8 +126,8 @@ h1 {
 
 .scroll-to-top {
   position: fixed !important;
-  top: 2rem !important;
-  right: 2rem !important;
+  bottom: 2rem !important;
+  right: calc(100vw / 2 - 1.5rem) !important;
   z-index: 1000 !important;
   font-size: 1.5rem !important;
   color: var(--white) !important;
@@ -128,6 +138,7 @@ h1 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
   /* transform: scale(1.25); */
   transition: filter 125ms ease-out, transform 125ms ease-out;
+  transform: scale(1.25) !important;
 }
 
 .scroll-to-top:hover {
@@ -135,7 +146,7 @@ h1 {
 }
 
 .scroll-to-top:active {
-  transform: scale(1.25) !important;
+  /* transform: scale(1.25) !important; */
 }
 
 .material-symbols-outlined.light_mode-symbol {
@@ -219,14 +230,6 @@ input:focus {
   color: var(--white);
 }
 
-.fade-in {
-  animation: fadeIn ease 125ms;
-  -webkit-animation: fadeIn ease 125ms;
-  -moz-animation: fadeIn ease 125ms;
-  -o-animation: fadeIn ease 125ms;
-  -ms-animation: fadeIn ease 125ms;
-}
-
 .pink {
   color: var(--pink);
 }
@@ -261,6 +264,18 @@ input:focus {
   color: var(--olive-darker);
 }
 
+.helper a {
+  /* text-decoration: underline; */
+  text-underline-offset: 2px;
+}
+
+.helper.white a {
+  color: var(--pink);
+  text-decoration: underline;
+  text-decoration-color: var(--pink);
+  text-decoration-thickness: 2px;
+}
+
 .serif {
   font-family: "Libre Baskerville", serif;
 }
@@ -277,16 +292,12 @@ input:focus {
   color: var(--black-lighter);
 }
 
-.helper a {
-  /* text-decoration: underline; */
-  text-underline-offset: 2px;
-}
-
-.helper.white a {
-  color: var(--pink);
-  text-decoration: underline;
-  text-decoration-color: var(--pink);
-  text-decoration-thickness: 2px;
+.fade-in {
+  animation: fadeIn ease 125ms;
+  -webkit-animation: fadeIn ease 125ms;
+  -moz-animation: fadeIn ease 125ms;
+  -o-animation: fadeIn ease 125ms;
+  -ms-animation: fadeIn ease 125ms;
 }
 
 @keyframes fadeIn {
@@ -295,5 +306,94 @@ input:focus {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.drop-in {
+  animation: dropIn ease 125ms;
+  -webkit-animation: dropIn ease 125ms;
+  -moz-animation: dropIn ease 125ms;
+  -o-animation: dropIn ease 125ms;
+  -ms-animation: dropIn ease 125ms;
+}
+
+@keyframes dropIn {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@-moz-keyframes dropIn {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes dropIn {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@-o-keyframes dropIn {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@-ms-keyframes dropIn {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
   }
 }

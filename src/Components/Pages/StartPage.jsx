@@ -11,6 +11,7 @@ import "../../assets/css/StartPage/PricingSection.css";
 import "../../assets/css/StartPage/TestimonialsSection.css";
 
 import Header from "../Header";
+import StartPageNavLinks from "../StartPageNavLinks";
 
 function HeroSection() {
   return (
@@ -70,11 +71,11 @@ function FeaturesSection() {
       icon: "code_blocks",
       description: "Get your code reviewed by someone. You can also review someone else's code.",
     },
-    {
-      name: "Project finder",
-      icon: "manage_search",
-      description: "Find a project to work on with someone else.",
-    },
+    // {
+    //   name: "Project finder",
+    //   icon: "manage_search",
+    //   description: "Find a project to work on with someone else.",
+    // },
     {
       name: "Project manager",
       icon: "engineering",
@@ -256,6 +257,33 @@ function TestimonialsSection() {
   );
 }
 
+function NavWhenScrolledDown() {
+  const [showNav, setShowNav] = useState(false);
+
+  useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY > 156) {
+        setShowNav(true);
+      } else {
+        setShowNav(false);
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    showNav && (
+      <nav id="nav-when-scrolled-down" className="fade-in drop-in">
+        <ul>
+          <StartPageNavLinks />
+        </ul>
+      </nav>
+    )
+  );
+}
+
 export default function StartPage() {
   const { getUsers } = useContext(AppContext);
   useEffect(() => {
@@ -268,7 +296,8 @@ export default function StartPage() {
 
   return (
     <div id="start-page" className="app-page fade-in">
-      <ScrollToTop smooth className="fade-in" component={<span className="material-symbols-outlined">vertical_align_top</span>} />
+      <NavWhenScrolledDown />
+      {/* <ScrollToTop smooth className="fade-in" component={<span className="material-symbols-outlined">vertical_align_top</span>} /> */}
       <HeroSection />
       <AboutSection />
       <TestimonialsSection />

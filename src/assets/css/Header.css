@@ -73,3 +73,7 @@ header .theme-toggle {
   border-radius: 50%;
   border: 0;
 }
+
+header .home-link {
+  display: none;
+}
