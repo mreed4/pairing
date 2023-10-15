@@ -9,6 +9,7 @@ import "../../assets/css/StartPage/AboutSection.css";
 import "../../assets/css/StartPage/FeaturesSection.css";
 import "../../assets/css/StartPage/PricingSection.css";
 import "../../assets/css/StartPage/TestimonialsSection.css";
+import "../../assets/css/StartPage/SignupSection.css";
 
 import Header from "../Header";
 import StartPageNavLinks from "../StartPageNavLinks";
@@ -257,6 +258,19 @@ function TestimonialsSection() {
   );
 }
 
+function SignUpSection() {
+  return (
+    <section id="sign-up">
+      <div>
+        {/* <h2>Sign Up</h2> */}
+        <Link to="/sign-up" className="button pink">
+          Sign Up
+        </Link>
+      </div>
+    </section>
+  );
+}
+
 function NavWhenScrolledDown() {
   const [showNav, setShowNav] = useState(false);
 
@@ -303,10 +317,7 @@ export default function StartPage() {
       <TestimonialsSection />
       <FeaturesSection />
       <PricingSection />
-      <section id="sign-up">
-        <h2>Sign Up</h2>
-        <Link to="/sign-up">Sign Up</Link>
-      </section>
+      <SignUpSection />
     </div>
   );
 }

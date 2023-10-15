@@ -9,7 +9,8 @@
 #about,
 #testimonials,
 #features,
-#pricing {
+#pricing,
+#sign-up {
   padding: 6rem 0;
   width: 100%;
   transition: border-bottom 125ms ease-out;
@@ -34,7 +35,8 @@
 #about > div,
 #testimonials > div,
 #features > div,
-#pricing > div {
+#pricing > div,
+#sign-up > div {
   width: 100%;
   max-width: 1024px;
   margin: 0 auto;
