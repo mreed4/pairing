@@ -191,63 +191,64 @@ function PricingSection() {
 }
 
 function TestimonialsSection() {
-  const { users } = useContext(AppContext);
-  const [testimonials, setTestimonials] = useState([]);
-
-  const testimonialText = [
-    "I was able to find someone to work with on my project. I'm so glad I found this site!",
-    "Pairings is exactly what I've been looking for!",
-    "I can't understand how I've been living without Pairings.",
-    "I have been using Pairings for over a year now and I love it! I can't imagine life without it",
-    "YES! This is what I've been looking for!",
-    "Finally! A place where I can find someone to work with!",
-    "Being a new developer, I was having trouble finding someone to work with. Pairings helped me find someone to work with.",
+  const testimonials = [
+    {
+      name: "Corinne",
+      role: "Designer",
+      text: "I was able to find someone to work with on my project. I'm so glad I found this site!",
+      // avatar:
+    },
+    {
+      name: "Zach",
+      role: "Developer",
+      text: "Pairings is exactly what I've been looking for!",
+      // avatar:
+    },
+    {
+      name: "Rae",
+      role: "Developer",
+      text: "I can't understand how I've been living without Pairings.",
+      // avatar:
+    },
+    {
+      name: "Daisie",
+      role: "Developer",
+      text: "I have been using Pairings for over a year now and I love it! I can't imagine life without it",
+      // avatar:
+    },
+    {
+      name: "Leighton",
+      role: "Designer",
+      text: "YES! This is what I've been looking for!",
+      // avatar:
+    },
+    {
+      name: "Britt",
+      role: "Designer",
+      text: "Finally! A place where I can find someone techie to work with!",
+      // avatar:
+    },
+    {
+      name: "Mateo",
+      role: "Developer",
+      text: "Being a new developer, I was having trouble finding someone to work with. Pairings helped me find someone to work with.",
+      // avatar:
+    },
   ];
-
-  function getTestimonials() {
-    const dummyTestimonials = [];
-
-    for (let i = 0; i < testimonialText.length; i++) {
-      function getAvatar(gender) {
-        gender = gender?.toLowerCase();
-        const random = Math.floor(Math.random() * 75);
-        if (gender === "male" || gender === "female") {
-          return `https://xsgames.co/randomusers/assets/avatars/${gender}/${random}.jpg`;
-        } else {
-          return `https://xsgames.co/randomusers/avatar.php?g=female`;
-        }
-      }
-
-      const index = Math.floor(Math.random() * users.length);
-      const user = users[index];
-      dummyTestimonials.push({
-        avatar: getAvatar(user?.gender),
-        name: user?.first_name,
-        // gender: user?.gender,
-        role: user?.role,
-        text: testimonialText[i],
-      });
-    }
-    setTestimonials([testimonials, ...dummyTestimonials]);
-  }
-
-  useMemo(() => {
-    getTestimonials();
-  }, [users]);
 
   return (
     <section id="testimonials">
       <div>
         <h2>Testimonials</h2>
         <div className="testimonials-list">
-          {testimonials.slice(1).map((testimonial, index) => (
-            <div key={index} className="testimonial">
+          {testimonials.map((testimonial, i) => (
+            <div key={i} className="testimonial">
               <img src={testimonial.avatar} alt={testimonial.name} />
               <div>
                 <p className="testimonial-text">{testimonial.text}</p>
                 <hr />
                 <span className="name">
-                  {testimonial.name}, {testimonial.role} {testimonial.gender}
+                  {testimonial.name}, {testimonial.role}
                 </span>
               </div>
             </div>
@@ -263,7 +264,7 @@ function SignUpSection() {
     <section id="sign-up">
       <div>
         {/* <h2>Sign Up</h2> */}
-        <Link to="/sign-up" className="button pink">
+        <Link to="/sign-up" className="button pink border">
           Sign Up
         </Link>
       </div>
@@ -314,7 +315,7 @@ export default function StartPage() {
       {/* <ScrollToTop smooth className="fade-in" component={<span className="material-symbols-outlined">vertical_align_top</span>} /> */}
       <HeroSection />
       <AboutSection />
-      <TestimonialsSection />
+      {false && <TestimonialsSection />}
       <FeaturesSection />
       <PricingSection />
       <SignUpSection />

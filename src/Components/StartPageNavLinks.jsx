@@ -1,13 +1,13 @@
 export default function StartPageNavLinks() {
-  const listItems = ["about", "testimonials", "features", "pricing"];
+  const listItems = ["about", "features", "pricing"];
 
   return (
     <>
-      <li>
+      {/* <li>
         <a href="/#" className="home-link">
           Top <span className="material-symbols-outlined">vertical_align_top</span>
         </a>
-      </li>
+      </li> */}
       {listItems.map((item, i) => (
         <li key={i}>
           <a href={`#${item}`}>

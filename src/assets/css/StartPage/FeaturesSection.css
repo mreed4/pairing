@@ -1,9 +1,9 @@
 #features {
-  background-color: var(--olive-light);
+  /* background-color: var(--olive-light); */
 }
 
 .dark-theme #features {
-  background-color: var(--black-light);
+  /* background-color: var(--black-light); */
 }
 
 .features-list {

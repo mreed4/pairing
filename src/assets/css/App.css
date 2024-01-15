@@ -86,10 +86,6 @@ h1 {
   font-weight: 700;
 }
 
-.app-page h2 {
-  /* padding-bottom: 1rem; */
-}
-
 .app {
   min-height: 100vh;
   display: flex;
@@ -115,8 +111,8 @@ h1 {
 }
 
 .light-theme .highlight {
-  color: var(--white);
-  background: var(--black-dark);
+  color: var(--olive-dark);
+  background: var(--white);
 }
 
 .dark-theme .highlight {

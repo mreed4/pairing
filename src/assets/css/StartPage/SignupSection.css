@@ -19,9 +19,9 @@
   align-items: center;
   margin: auto;
   padding: 5rem 0;
-  /* border-radius: 3rem;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 2px solid var(--pink); */
+  border-radius: 60rem;
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+  /* border: 2px solid var(--pink); */
 }
 
 .light-theme #sign-up > div {
